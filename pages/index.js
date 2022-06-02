@@ -25,7 +25,7 @@ export default function Home() {
   }, [])
 
   async function loadNFTs() {
-    /* create a generic provider and query for unsold market items */
+    
     const provider = new ethers.providers.JsonRpcProvider()
     const contract = new ethers.Contract(marketplaceAddress, NFTMarketplace.abi, provider)
     const data = await contract.fetchMarketItems()
@@ -65,7 +65,7 @@ export default function Home() {
     
   }
 
-  if (loadingState === 'loaded' && !nfts.length) return (<h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>)
+  
   return (
     <div className="flex justify-center">
       <div className="px-4" style={{ maxWidth: '1600px' }}>

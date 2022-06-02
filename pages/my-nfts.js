@@ -45,10 +45,7 @@ export default function MyAssets() {
     setNfts(items);
     setLoadingState("loaded");
   }
-  function listNFT(nft) {
-    console.log("nft:", nft);
-    router.push(`/resell-nft?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`);
-  }
+
   if (loadingState === "loaded" && !nfts.length)
     return <h1 className="py-10 px-20 text-3xl">No NFTs owned</h1>;
   return (
@@ -62,12 +59,6 @@ export default function MyAssets() {
                 <p className="text-2xl font-bold text-white">
                   Price - {nft.price} Eth
                 </p>
-                <button
-                  className="mt-4 w-full bg-pink-500 text-white font-bold py-2 px-12 rounded"
-                  onClick={() => listNFT(nft)}
-                >
-                  List
-                </button>
               </div>
             </div>
           ))}
